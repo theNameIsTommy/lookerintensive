@@ -16,6 +16,8 @@ explore: d_dates {}
 
 explore: d_part {}
 
+explore: d_supplier {}
+
 explore: f_lineitems {
 
   join: d_customer {

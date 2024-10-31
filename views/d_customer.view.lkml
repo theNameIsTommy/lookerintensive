@@ -34,4 +34,9 @@ view: d_customer {
     type: count
     drill_fields: [c_name]
   }
+  measure: total_customers {
+    type: count_distinct
+    sql: ${TABLE}.C_CUSTKEY ;;
+    drill_fields: [c_name]
+  }
 }

@@ -4,27 +4,102 @@ view: f_lineitems {
     sql: ${TABLE}.lineitem_id ;;
   }
 
-  dimension: item_price {
-    type: number
-    sql: ${TABLE}.item_price ;;
-  }
-
   measure: total_sale_price {
     type: sum
     sql: ${item_price} ;;
-    label: "Total Sale Price"
+    value_format_name: usd
+    description: "Total sales from items sold"
   }
 
   measure: average_sale_price {
     type: average
     sql: ${item_price} ;;
-    label: "Average Sale Price"
+    value_format_name: usd
+    description: "Average sale price of items sold"
   }
 
   measure: cumulative_total_sales {
     type: running_total
     sql: ${total_sale_price} ;;
     label: "Cumulative Total Sales"
+  }
+
+  measure: total_russia_sales {
+    type: sum
+    sql: ${item_price} ;;
+    filters: [d_customer.c_nation: "RUSSIA"]
+    value_format_name: usd
+    description: "Total sales by customers from Russia"
+  }
+
+  measure: total_gross_revenue {
+    type: sum
+    sql: ${item_price} ;;
+    filters: [l_orderstatus: "F"]
+    value_format_name: usd
+    description: "Total price of completed sales"
+  }
+
+  measure: total_cost {
+    label: "Total_Cost"
+    description: "Total Cost"
+    type: sum
+    sql: ${l_supplycost};;
+    value_format_name: usd
+  }
+
+  measure: total_gross_margin {
+    type: number
+    sql: ${total_gross_revenue} - ${total_cost} ;;
+    value_format_name: usd
+    description: "Total Gross Revenue – Total Cost"
+  }
+
+  measure: gross_margin_percentage {
+    type: number
+    sql: CASE
+          WHEN ${total_gross_revenue} = 0 THEN 0
+          ELSE ${total_gross_margin} / ${total_gross_revenue}
+         END ;;
+    value_format_name: percent_2
+    description: "Total Gross Margin Amount / Total Gross Revenue"
+  }
+
+  measure: number_of_items_returned {
+    type: count
+    filters: [l_returnflag: "Y"]  # Adjust filter based on your status field name
+    description: "Number of items that were returned by dissatisfied customers"
+  }
+
+  measure: total_items_sold {
+    type: count
+    description: "Number of items that were sold"
+  }
+
+  measure: item_return_rate {
+    type: number
+    sql: CASE
+          WHEN ${total_items_sold} = 0 THEN 0
+          ELSE ${number_of_items_returned}::float / ${total_items_sold}
+         END ;;
+    value_format_name: percent_2
+    description: "Number Of Items Returned / Total Number Of Items Sold"
+  }
+
+  measure: average_spend_per_customer {
+    type: number
+    sql: CASE
+          WHEN ${d_customer.total_customers} = 0 THEN 0
+          ELSE ${total_sale_price} / ${d_customer.total_customers}
+         END ;;
+    value_format_name: usd
+    description: "Total Sale Price / Total Number of Customers"
+  }
+
+
+  dimension: item_price {
+    type: number
+    sql: ${TABLE}.item_price ;;
   }
 
   dimension: l_availqty {
