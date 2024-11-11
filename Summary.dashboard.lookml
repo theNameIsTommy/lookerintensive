@@ -30,10 +30,10 @@
           palette_id: fb7bb53e-b77b-4ab6-8274-9d420d3d73f3
         custom_color: "#B1399E"
         single_value_title: Total Number of Orders for 1 Jan 1995
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         defaults_version: 1
         hidden_pivots: {}
         listen:
@@ -63,10 +63,10 @@
         custom_color: "#B1399E"
         single_value_title: Total Revenue for 1 Jan 1995
         value_format: "$#,##0"
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         defaults_version: 1
         listen:
           C Region: d_customer.c_region
@@ -95,10 +95,10 @@
         conditional_formatting_include_nulls: false
         custom_color: "#B1399E"
         single_value_title: Total Number of Returns over the Jan 1995
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         defaults_version: 1
         hidden_pivots: {}
         listen:
@@ -128,10 +128,10 @@
         conditional_formatting_include_nulls: false
         custom_color: "#B1399E"
         single_value_title: Gross Margin % over the Jan 1995
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         defaults_version: 1
         hidden_pivots: {}
         listen:
@@ -216,10 +216,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -295,10 +295,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -380,10 +380,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -473,10 +473,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -572,7 +572,7 @@
           options:
             steps: 5
             reverse: false
-        y_axes: [{label: !!null '', orientation: left, series: [{axisId: f_lineitems.total_gross_revenue,
+        y_axes: [{label: null, orientation: left, series: [{axisId: f_lineitems.total_gross_revenue,
                 id: f_lineitems.total_gross_revenue, name: Total Gross Revenue}], showLabels: true,
             showValues: true, unpinAxis: true, tickDensity: default, tickDensityCustom: 5,
             type: linear}, {label: '', orientation: right, series: [{axisId: gross_revenue_percentage,
@@ -602,10 +602,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -708,10 +708,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -817,10 +817,10 @@
         comparison_reverse_colors: false
         show_comparison_label: true
         enable_conditional_formatting: false
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         conditional_formatting_include_totals: false
         conditional_formatting_include_nulls: false
         defaults_version: 1
@@ -902,10 +902,10 @@
           show_hide: hide
           first_last: first
           num_rows: 0
-        conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3EB0D5",
-            font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+        conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+            font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
               palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-            strikethrough: false, fields: !!null ''}]
+            strikethrough: false, fields: null}]
         transpose: false
         truncate_text: true
         size_to_fit: true
