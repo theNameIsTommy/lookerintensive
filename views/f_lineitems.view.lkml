@@ -4,16 +4,17 @@ view: f_lineitems {
     sql: ${TABLE}.lineitem_id ;;
   }
 
-  measure: total_sale_price {
+  measure: total_sale_price  {
+    label: "Total Sale Price"
+    description: "Total sales of items sold"
     type: sum
-    sql: ${item_price} ;;
+    sql: ${l_extendedprice} ;;
     value_format_name: usd
-    description: "Total sales from items sold"
   }
 
   measure: average_sale_price {
     type: average
-    sql: ${item_price} ;;
+    sql: ${l_extendedprice} ;;
     value_format_name: usd
     description: "Average sale price of items sold"
   }
@@ -26,7 +27,7 @@ view: f_lineitems {
 
   measure: total_russia_sales {
     type: sum
-    sql: ${item_price} ;;
+    sql: ${l_extendedprice} ;;
     filters: [d_customer.c_nation: "RUSSIA"]
     value_format_name: usd
     description: "Total sales by customers from Russia"
@@ -34,7 +35,7 @@ view: f_lineitems {
 
   measure: total_gross_revenue {
     type: sum
-    sql: ${item_price} ;;
+    sql: ${l_extendedprice} ;;
     filters: [l_orderstatus: "F"]
     value_format_name: usd
     description: "Total price of completed sales"
@@ -98,10 +99,10 @@ view: f_lineitems {
   }
 
 
-  dimension: item_price {
-    type: number
-    sql: ${TABLE}.item_price ;;
-  }
+  # dimension: l_extendedprice {
+  #   type: number
+  #   sql: ${TABLE}.l_extendedprice ;;
+  # }
 
   dimension: l_availqty {
     type: number
