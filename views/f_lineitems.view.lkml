@@ -48,18 +48,19 @@ view: f_lineitems {
     value_format_name: usd
   }
 
-  measure: total_gross_margin {
-    type: number
-    sql: ${total_gross_revenue} - ${total_cost} ;;
-    value_format_name: usd
+  measure: total_gross_margin_amount {
+    label: "Total Gross Margin Amount"
     description: "Total Gross Revenue – Total Cost"
+    type: number
+    sql: ${total_gross_revenue}-${total_cost} ;;
+    value_format_name: usd
   }
 
   measure: gross_margin_percentage {
     type: number
     sql: CASE
           WHEN ${total_gross_revenue} = 0 THEN 0
-          ELSE ${total_gross_margin} / ${total_gross_revenue}
+          ELSE ${total_gross_margin_amount} / ${total_gross_revenue}
          END ;;
     value_format_name: percent_2
     description: "Total Gross Margin Amount / Total Gross Revenue"

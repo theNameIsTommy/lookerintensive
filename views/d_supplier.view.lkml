@@ -30,6 +30,14 @@ view: d_supplier {
     primary_key: yes
     sql: ${TABLE}."S_SUPPKEY" ;;
   }
+  dimension: suppliers_cohort_by_balance {
+    label: "Cohort of suppliers according to Account Balance"
+    description: "Cohort of suppliers according to Account Balance: <= 0,1—3000,3001—5000,5001—7000,7000 <"
+    type: tier
+    tiers: [1,3001,5001,7001]
+    style: integer
+    sql: ${s_acctbal} ;;
+  }
   measure: count {
     type: count
     drill_fields: [s_name]
