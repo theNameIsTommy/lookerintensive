@@ -1,8 +1,20 @@
 view: f_lineitems {
-  dimension: lineitem_id {
+
+  sql_table_name: "DATA_MART"."F_LINEITEMS"
+  ;;
+
+  dimension: prim_key {
     primary_key: yes
-    sql: ${TABLE}.lineitem_id ;;
+    hidden: yes
+    label: "Primary Key"
+    description: "Combination of l_orderkey and l_linenumber"
+    sql: CONCAT(${l_orderkey},${l_linenumber})  ;;
   }
+
+  # dimension: lineitem_id {
+  #   primary_key: yes
+  #   sql: ${TABLE}.lineitem_id ;;
+  # }
 
   measure: total_sale_price  {
     label: "Total Sale Price"
@@ -68,24 +80,36 @@ view: f_lineitems {
   }
 
   measure: number_of_items_returned {
-    type: count
-    filters: [l_returnflag: "Y"]  # Adjust filter based on your status field name
+    label: "Number of Items Returned"
     description: "Number of items that were returned by dissatisfied customers"
+    type: sum
+    sql: ${l_quantity} ;;
+    filters: [is_returned: "yes"]
+    value_format: "#,##0"
   }
 
   measure: total_items_sold {
-    type: count
+    label: "Total Number of Items Sold"
     description: "Number of items that were sold"
+    type: sum
+    sql: ${l_quantity} ;;
+    value_format: "#,##0"
   }
 
   measure: item_return_rate {
-    type: number
-    sql: CASE
-          WHEN ${total_items_sold} = 0 THEN 0
-          ELSE ${number_of_items_returned}::float / ${total_items_sold}
-         END ;;
-    value_format_name: percent_2
+    label: "Item Return Rate"
     description: "Number Of Items Returned / Total Number Of Items Sold"
+    type: number
+    sql: ${number_of_items_returned}/NULLIF(${total_items_sold},0) ;;
+    value_format: "0.00%"
+    html: {% if value >= 0.5 %}
+          <font color="red">{{rendered_value}}</font>
+          {% elsif value >= 0.3 and value < 0.5 %}
+          <font color="orange">{{rendered_value}}</font>
+          {% else %}
+          <font color="green">{{rendered_value}}</font>
+          {% endif %}
+          ;;
   }
 
   measure: average_spend_per_customer {
@@ -98,11 +122,6 @@ view: f_lineitems {
     description: "Total Sale Price / Total Number of Customers"
   }
 
-
-  # dimension: l_extendedprice {
-  #   type: number
-  #   sql: ${TABLE}.l_extendedprice ;;
-  # }
 
   dimension: l_availqty {
     type: number
@@ -195,6 +214,10 @@ view: f_lineitems {
   dimension: l_totalprice {
     type: number
     sql: ${TABLE}."L_TOTALPRICE" ;;
+  }
+  dimension: is_returned {
+    type: yesno
+    sql: ${l_returnflag} = 'R' ;;
   }
   measure: count {
     type: count
