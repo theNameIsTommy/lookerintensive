@@ -1,6 +1,6 @@
 ---
   - dashboard: summary_dashboard
-    title: Summary Dashboard
+    title: Summary Dashboard Tamas Siklosi
     layout: newspaper
     preferred_viewer: dashboards-next
     crossfilter_enabled: true

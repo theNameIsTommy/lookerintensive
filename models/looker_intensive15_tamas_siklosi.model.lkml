@@ -3,7 +3,7 @@ connection: "tpchlooker"
 # include all the views
 include: "/views/**/*.view.lkml"
 
-include: "/Summary.dashboard.lookml"
+include: "/Summary_Dashboard_Tamas_Siklosi.dashboard.lookml"
 
 datagroup: looker_intensive15_tamas_siklosi_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
