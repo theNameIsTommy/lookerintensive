@@ -11,11 +11,6 @@ view: f_lineitems {
     sql: CONCAT(${l_orderkey},${l_linenumber})  ;;
   }
 
-  # dimension: lineitem_id {
-  #   primary_key: yes
-  #   sql: ${TABLE}.lineitem_id ;;
-  # }
-
   measure: total_sale_price  {
     label: "Total Sale Price"
     description: "Total sales of items sold"
