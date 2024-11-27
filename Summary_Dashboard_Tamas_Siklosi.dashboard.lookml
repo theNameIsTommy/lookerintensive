@@ -453,265 +453,265 @@
       height: 9
 
 
-    - title: test_view
-      name: test_view
-      model: looker_intensive15_tamas_siklosi
-      explore: f_lineitems
-      type: looker_funnel
-      fields: [f_lineitems.l_shipmode, f_lineitems.count]
-      filters:
-      d_supplier.region: ''
-      d_dates.current_date_year: ''
-      d_supplier.nation: ''
-      sorts: [f_lineitems.count desc 0]
-      limit: 500
-      column_limit: 50
-      leftAxisLabelVisible: false
-      leftAxisLabel: ''
-      rightAxisLabelVisible: false
-      rightAxisLabel: ''
-      smoothedBars: false
-      orientation: automatic
-      labelPosition: inline
-      percentType: total
-      percentPosition: hidden
-      valuePosition: left
-      labelColorEnabled: false
-      labelColor: "#FFF"
-      show_view_names: false
-      show_row_numbers: true
-      transpose: false
-      truncate_text: true
-      hide_totals: false
-      hide_row_totals: false
-      size_to_fit: true
-      table_theme: editable
-      limit_displayed_rows: false
-      enable_conditional_formatting: false
-      header_text_alignment: left
-      header_font_size: 12
-      rows_font_size: 12
-      conditional_formatting_include_totals: false
-      conditional_formatting_include_nulls: false
-      value_labels: legend
-      label_type: labPer
-      start_angle:
-      color_application:
-        collection_id: 7c56cc21-66e4-41c9-81ce-a60e1c3967b2
-        palette_id: f0077e50-e03c-4a7e-930c-7321b2267283
-        options:
-          steps: 5
-          reverse: true
-      series_colors:
-        SHIP: "#12B5CB"
-        FOB: "#76e85e"
-        AIR: "#FF8168"
-        RAIL: "#fffc5f"
-        REG AIR: "#8c95f5"
-      series_labels: {}
-      up_color: "#7CB342"
-      down_color: "#EA4335"
-      total_color: "#FF8168"
-      show_value_labels: false
-      show_x_axis_ticks: true
-      show_x_axis_label: true
-      x_axis_scale: auto
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_gridlines: true
-      isStepped: false
-      labelOverlap: false
-      x_axis_gridlines: false
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      y_axis_scale_mode: linear
-      x_axis_reversed: false
-      y_axis_reversed: false
-      plot_size_by_field: false
-      trellis: ''
-      stacking: ''
-      legend_position: center
-      point_style: none
-      label_density: 25
-      y_axis_combined: true
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      truncate_column_names: false
-      font_size: 14
-      charts_across:
-      hide_legend: false
-      arm_length: 25
-      arm_weight: 50
-      spinner_length: 100
-      spinner_weight: 50
-      angle: 90
-      cutout: 50
-      range_x: 1
-      range_y: 1
-      defaults_version: 1
-      show_null_points: true
-      interpolation: linear
-      hidden_fields: []
-      hidden_points_if_no: []
-      custom_color_enabled: true
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      groupBars: true
-      labelSize: 10pt
-      showLegend: true
-      map_plot_mode: points
-      heatmap_gridlines: false
-      heatmap_gridlines_empty: false
-      heatmap_opacity: 0.5
-      show_region_field: true
-      draw_map_labels_above_data: true
-      map_tile_provider: light
-      map_position: fit_data
-      map_scale_indicator: 'off'
-      map_pannable: true
-      map_zoomable: true
-      map_marker_type: circle
-      map_marker_icon_name: default
-      map_marker_radius_mode: proportional_value
-      map_marker_units: meters
-      map_marker_proportional_scale_type: linear
-      map_marker_color_mode: fixed
-      show_legend: true
-      quantize_map_value_colors: false
-      reverse_map_value_colors: false
-
-    # - title: Region Detailed Stats
-    #   name: Region Detailed Stats
+    # - title: test_view
+    #   name: test_view
     #   model: looker_intensive15_tamas_siklosi
     #   explore: f_lineitems
-    #   type: table
-    #   fields: [f_lineitems.total_items_sold, d_customer.c_region, order_status]
-    #   pivots: [order_status]
-    #   sorts: [order_status, f_lineitems.total_items_sold asc 0]
-    #   limit: 10
-    #   total: true
-    #   row_total: right
-    #   dynamic_fields:
-    #   - category: table_calculation
-    #     expression: "${f_lineitems.total_gross_margin_amount} - offset(${f_lineitems.total_gross_margin_amount},-1)"
-    #     label: YoY Gross Margin Amount
-    #     value_format:
-    #     value_format_name: usd
-    #     _kind_hint: measure
-    #     table_calculation: yoy_gross_margin_amount
-    #     _type_hint: number
-    #     is_disabled: true
-    #   - category: table_calculation
-    #     label: Gross Revenue Percentage
-    #     value_format:
-    #     value_format_name: percent_2
-    #     calculation_type: percent_of_column_sum
-    #     table_calculation: gross_revenue_percentage
-    #     args:
-    #     - f_lineitems.total_gross_revenue
-    #     _kind_hint: measure
-    #     _type_hint: number
-    #     is_disabled: true
-    #   - category: table_calculation
-    #     label: "% of Total per Region"
-    #     value_format:
-    #     value_format_name: percent_2
-    #     calculation_type: percent_of_row
-    #     table_calculation: of_total_per_region
-    #     args:
-    #     - f_lineitems.total_items_sold
-    #     _kind_hint: measure
-    #     _type_hint: number
-    #   - category: dimension
-    #     expression: |-
-    #       if(${f_lineitems.l_orderstatus} = "P", "Pending ",
-    #         if(${f_lineitems.l_orderstatus} = "O", "Opened ", "Finished "))
-    #     label: Order Status
-    #     value_format:
-    #     value_format_name:
-    #     dimension: order_status
-    #     _kind_hint: measure
-    #     _type_hint: string
+    #   type: looker_funnel
+    #   fields: [f_lineitems.l_shipmode, f_lineitems.count]
+    #   filters:
+    #   d_supplier.region: ''
+    #   d_dates.current_date_year: ''
+    #   d_supplier.nation: ''
+    #   sorts: [f_lineitems.count desc 0]
+    #   limit: 500
+    #   column_limit: 50
+    #   leftAxisLabelVisible: false
+    #   leftAxisLabel: ''
+    #   rightAxisLabelVisible: false
+    #   rightAxisLabel: ''
+    #   smoothedBars: false
+    #   orientation: automatic
+    #   labelPosition: inline
+    #   percentType: total
+    #   percentPosition: hidden
+    #   valuePosition: left
+    #   labelColorEnabled: false
+    #   labelColor: "#FFF"
     #   show_view_names: false
-    #   show_row_numbers: false
-    #   truncate_column_names: false
-    #   hide_totals: false
-    #   hide_row_totals: false
-    #   table_theme: gray
-    #   limit_displayed_rows: false
-    #   enable_conditional_formatting: false
-    #   conditional_formatting_include_totals: false
-    #   conditional_formatting_include_nulls: false
-    #   series_labels: {}
-    #   limit_displayed_rows_values:
-    #     show_hide: hide
-    #     first_last: first
-    #     num_rows: 0
-    #   conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
-    #       font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
-    #         palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
-    #       strikethrough: false, fields: null}]
+    #   show_row_numbers: true
     #   transpose: false
     #   truncate_text: true
+    #   hide_totals: false
+    #   hide_row_totals: false
     #   size_to_fit: true
+    #   table_theme: editable
+    #   limit_displayed_rows: false
+    #   enable_conditional_formatting: false
     #   header_text_alignment: left
     #   header_font_size: 12
     #   rows_font_size: 12
-    #   x_axis_gridlines: false
-    #   y_axis_gridlines: true
+    #   conditional_formatting_include_totals: false
+    #   conditional_formatting_include_nulls: false
+    #   value_labels: legend
+    #   label_type: labPer
+    #   start_angle:
+    #   color_application:
+    #     collection_id: 7c56cc21-66e4-41c9-81ce-a60e1c3967b2
+    #     palette_id: f0077e50-e03c-4a7e-930c-7321b2267283
+    #     options:
+    #       steps: 5
+    #       reverse: true
+    #   series_colors:
+    #     SHIP: "#12B5CB"
+    #     FOB: "#76e85e"
+    #     AIR: "#FF8168"
+    #     RAIL: "#fffc5f"
+    #     REG AIR: "#8c95f5"
+    #   series_labels: {}
+    #   up_color: "#7CB342"
+    #   down_color: "#EA4335"
+    #   total_color: "#FF8168"
+    #   show_value_labels: false
+    #   show_x_axis_ticks: true
+    #   show_x_axis_label: true
+    #   x_axis_scale: auto
     #   show_y_axis_labels: true
     #   show_y_axis_ticks: true
+    #   y_axis_gridlines: true
+    #   isStepped: false
+    #   labelOverlap: false
+    #   x_axis_gridlines: false
     #   y_axis_tick_density: default
     #   y_axis_tick_density_custom: 5
-    #   show_x_axis_label: true
-    #   show_x_axis_ticks: true
     #   y_axis_scale_mode: linear
     #   x_axis_reversed: false
     #   y_axis_reversed: false
     #   plot_size_by_field: false
-    #   x_axis_zoom: true
-    #   y_axis_zoom: true
     #   trellis: ''
     #   stacking: ''
-    #   hide_legend: false
     #   legend_position: center
-    #   font_size: 12
     #   point_style: none
-    #   show_value_labels: false
     #   label_density: 25
-    #   x_axis_scale: auto
     #   y_axis_combined: true
     #   ordering: none
     #   show_null_labels: false
     #   show_totals_labels: false
     #   show_silhouette: false
     #   totals_color: "#808080"
+    #   truncate_column_names: false
+    #   font_size: 14
+    #   charts_across:
+    #   hide_legend: false
+    #   arm_length: 25
+    #   arm_weight: 50
+    #   spinner_length: 100
+    #   spinner_weight: 50
+    #   angle: 90
+    #   cutout: 50
+    #   range_x: 1
+    #   range_y: 1
+    #   defaults_version: 1
+    #   show_null_points: true
+    #   interpolation: linear
+    #   hidden_fields: []
+    #   hidden_points_if_no: []
     #   custom_color_enabled: true
     #   show_single_value_title: true
     #   show_comparison: false
     #   comparison_type: value
     #   comparison_reverse_colors: false
     #   show_comparison_label: true
-    #   defaults_version: 1
-    #   hidden_pivots: {}
-    #   show_null_points: true
-    #   interpolation: linear
-    #   hidden_fields: []
-    #   value_labels: legend
-    #   label_type: labPer
-    #   hidden_points_if_no: []
-    #   listen:
-    #     C Region: d_customer.c_region
-    #   row: 28
-    #   col: 12
-    #   width: 12
-    #   height: 9
+    #   groupBars: true
+    #   labelSize: 10pt
+    #   showLegend: true
+    #   map_plot_mode: points
+    #   heatmap_gridlines: false
+    #   heatmap_gridlines_empty: false
+    #   heatmap_opacity: 0.5
+    #   show_region_field: true
+    #   draw_map_labels_above_data: true
+    #   map_tile_provider: light
+    #   map_position: fit_data
+    #   map_scale_indicator: 'off'
+    #   map_pannable: true
+    #   map_zoomable: true
+    #   map_marker_type: circle
+    #   map_marker_icon_name: default
+    #   map_marker_radius_mode: proportional_value
+    #   map_marker_units: meters
+    #   map_marker_proportional_scale_type: linear
+    #   map_marker_color_mode: fixed
+    #   show_legend: true
+    #   quantize_map_value_colors: false
+    #   reverse_map_value_colors: false
+
+    - title: Region Detailed Stats
+      name: Region Detailed Stats
+      model: looker_intensive15_tamas_siklosi
+      explore: f_lineitems
+      type: table
+      fields: [f_lineitems.total_items_sold, d_customer.c_region, order_status]
+      pivots: [order_status]
+      sorts: [order_status, f_lineitems.total_items_sold asc 0]
+      limit: 10
+      total: true
+      row_total: right
+      dynamic_fields:
+      - category: table_calculation
+        expression: "${f_lineitems.total_gross_margin_amount} - offset(${f_lineitems.total_gross_margin_amount},-1)"
+        label: YoY Gross Margin Amount
+        value_format:
+        value_format_name: usd
+        _kind_hint: measure
+        table_calculation: yoy_gross_margin_amount
+        _type_hint: number
+        is_disabled: true
+      - category: table_calculation
+        label: Gross Revenue Percentage
+        value_format:
+        value_format_name: percent_2
+        calculation_type: percent_of_column_sum
+        table_calculation: gross_revenue_percentage
+        args:
+        - f_lineitems.total_gross_revenue
+        _kind_hint: measure
+        _type_hint: number
+        is_disabled: true
+      - category: table_calculation
+        label: "% of Total per Region"
+        value_format:
+        value_format_name: percent_2
+        calculation_type: percent_of_row
+        table_calculation: of_total_per_region
+        args:
+        - f_lineitems.total_items_sold
+        _kind_hint: measure
+        _type_hint: number
+      - category: dimension
+        expression: |-
+          if(${f_lineitems.l_orderstatus} = "P", "Pending ",
+            if(${f_lineitems.l_orderstatus} = "O", "Opened ", "Finished "))
+        label: Order Status
+        value_format:
+        value_format_name:
+        dimension: order_status
+        _kind_hint: measure
+        _type_hint: string
+      show_view_names: false
+      show_row_numbers: false
+      truncate_column_names: false
+      hide_totals: false
+      hide_row_totals: false
+      table_theme: gray
+      limit_displayed_rows: false
+      enable_conditional_formatting: false
+      conditional_formatting_include_totals: false
+      conditional_formatting_include_nulls: false
+      series_labels: {}
+      limit_displayed_rows_values:
+        show_hide: hide
+        first_last: first
+        num_rows: 0
+      conditional_formatting: [{type: equal to, value: null, background_color: "#3EB0D5",
+          font_color: null, color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
+            palette_id: 85de97da-2ded-4dec-9dbd-e6a7d36d5825}, bold: false, italic: false,
+          strikethrough: false, fields: null}]
+      transpose: false
+      truncate_text: true
+      size_to_fit: true
+      header_text_alignment: left
+      header_font_size: 12
+      rows_font_size: 12
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: true
+      show_x_axis_ticks: true
+      y_axis_scale_mode: linear
+      x_axis_reversed: false
+      y_axis_reversed: false
+      plot_size_by_field: false
+      x_axis_zoom: true
+      y_axis_zoom: true
+      trellis: ''
+      stacking: ''
+      hide_legend: false
+      legend_position: center
+      font_size: 12
+      point_style: none
+      show_value_labels: false
+      label_density: 25
+      x_axis_scale: auto
+      y_axis_combined: true
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      custom_color_enabled: true
+      show_single_value_title: true
+      show_comparison: false
+      comparison_type: value
+      comparison_reverse_colors: false
+      show_comparison_label: true
+      defaults_version: 1
+      hidden_pivots: {}
+      show_null_points: true
+      interpolation: linear
+      hidden_fields: []
+      value_labels: legend
+      label_type: labPer
+      hidden_points_if_no: []
+      listen:
+        C Region: d_customer.c_region
+      row: 28
+      col: 12
+      width: 12
+      height: 9
 
     filters:
     - name: C Region
