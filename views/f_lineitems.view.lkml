@@ -136,6 +136,20 @@ view: f_lineitems {
     }
   }
 
+  dimension: timeframe_date {
+    type: date
+    sql:
+      {% if timeframe_selector._parameter_value == 'month' %}
+        ${TABLE}.date_column
+      {% elsif timeframe_selector._parameter_value == 'quarter' %}
+        DATE_TRUNC('quarter', ${TABLE}.date_column)
+      {% elsif timeframe_selector._parameter_value == 'year' %}
+        DATE_TRUNC('year', ${TABLE}.date_column)
+      {% else %}
+        ${TABLE}.date_column  -- Default case if something goes wrong
+      {% endif %} ;;
+  }
+
   dimension: dynamic_timeframe {
     label_from_parameter: timeframe_selector
 
@@ -143,6 +157,8 @@ view: f_lineitems {
       {% if timeframe_selector._parameter_value == "quarter" %} ${order_date.quarter}
       {% elsif timeframe_selector._parameter_value == "year" %} ${order_date.year}
       {% elsif timeframe_selector._parameter_value == "month" %} ${order_date.month_num}
+      {% else %}
+        ${TABLE}.date_column
       {% endif %}
       ;;
   }
