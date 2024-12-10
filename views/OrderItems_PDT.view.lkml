@@ -32,14 +32,6 @@ view: OrderItems_PDT{
     label: "Cumulative Total Sales"
   }
 
-  measure: total_russia_sales {
-    type: sum
-    sql: ${l_extendedprice} ;;
-    filters: [d_customer.c_nation: "RUSSIA"]
-    value_format_name: usd
-    description: "Total sales by customers from Russia"
-  }
-
   measure: total_gross_revenue {
     type: sum
     sql: ${l_extendedprice} ;;
@@ -107,16 +99,6 @@ view: OrderItems_PDT{
           ;;
   }
 
-  measure: average_spend_per_customer {
-    type: number
-    sql: CASE
-          WHEN ${d_customer.total_customers} = 0 THEN 0
-          ELSE ${total_sale_price} / ${d_customer.total_customers}
-         END ;;
-    value_format_name: usd
-    description: "Total Sale Price / Total Number of Customers"
-  }
-
 
   parameter: timeframe_selector {
     type: unquoted
@@ -148,31 +130,6 @@ view: OrderItems_PDT{
       {% else %}
         ${TABLE}.date_column  -- Default case if something goes wrong
       {% endif %} ;;
-  }
-
-  dimension: dynamic_timeframe {
-    label_from_parameter: timeframe_selector
-
-    sql:
-      {% if timeframe_selector._parameter_value == "quarter" %} ${order_date.quarter}
-      {% elsif timeframe_selector._parameter_value == "year" %} ${order_date.year}
-      {% elsif timeframe_selector._parameter_value == "month" %} ${order_date.month_num}
-      {% else %}
-        ${TABLE}.date_column
-      {% endif %}
-      ;;
-  }
-
-
-  dimension:dynamic_timeframe_title {
-    label: "Chart Title"
-    type: string
-    sql:
-     {% if timeframe_selector._parameter_value == "quarter" %} 'Quarterly'
-      {% elsif timeframe_selector._parameter_value == "year" %} 'Yearly'
-      {% elsif timeframe_selector._parameter_value == "month" %} 'Monthly'
-      {% endif %}
-      ;;
   }
 
 

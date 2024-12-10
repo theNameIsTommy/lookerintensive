@@ -20,6 +20,12 @@ explore: d_part {}
 
 explore: d_supplier {}
 
+
+explore: order_items_pdt {
+    view_name: OrderItems_PDT
+}
+
+
 ### Orders ###
   explore: f_lineitems {
     label: "Orders Items"
