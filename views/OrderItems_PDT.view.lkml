@@ -1,7 +1,18 @@
 view: OrderItems_PDT{
+  derived_table: {
+    sql: SELECT
+      order_key,
+      part_key,
+      SUM(sales) AS total_sales,
+      SUM(margin) AS total_margin,
+      SUM(returns) AS total_returns,
+      SUM(costs) AS total_costs
+    FROM tchplooker.order_items
+    GROUP BY order_key, part_key ;;
+  }
 
-  sql_table_name: "DATA_MART"."F_LINEITEMS"
-    ;;
+  # sql_table_name: "DATA_MART"."F_LINEITEMS"
+  # ;;
 
   dimension: prim_key {
     primary_key: yes
