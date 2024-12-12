@@ -1,12 +1,12 @@
 view: OrderItems_PDT{
   derived_table: {
     sql: SELECT
-      order_key,
-      part_key,
-      SUM(sales) AS total_sales,
+      L_ORDERKEY,
+      L_PARTKEY,
+      SUM(L_EXTENDEDPRICE) AS total_sales,
       SUM(margin) AS total_margin,
       SUM(returns) AS total_returns,
-      SUM(costs) AS total_costs
+      SUM() AS total_costs
     FROM f_lineitems
     GROUP BY order_key, part_key ;;
   }
