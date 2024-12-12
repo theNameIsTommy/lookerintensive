@@ -7,7 +7,7 @@ view: OrderItems_PDT{
       SUM(margin) AS total_margin,
       SUM(returns) AS total_returns,
       SUM(costs) AS total_costs
-    FROM tchplooker.order_items
+    FROM tchplooker.f_lineitems
     GROUP BY order_key, part_key ;;
   }
 
